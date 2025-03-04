@@ -13,8 +13,8 @@ public class Application {
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
 
         if(args.length != 1){
             throw new IllegalArgumentException("Expected 1 argument but found " + args.length);
