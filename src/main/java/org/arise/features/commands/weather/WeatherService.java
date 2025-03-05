@@ -32,7 +32,7 @@ public class WeatherService {
             city = URLEncoder.encode(city, StandardCharsets.UTF_8);
 
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("http://api.weatherapi.com/v1/current.json?key=%s&q=%s&aqi=no".formatted(apiKey,city)))
+                    .uri(URI.create("https://api.weatherapi.com/v1/current.json?key=%s&q=%s&aqi=no".formatted(apiKey,city)))
                     .GET()
                     .build();
 

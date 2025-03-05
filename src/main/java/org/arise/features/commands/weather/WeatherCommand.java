@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.utils.messages.MessageCreateData;
 import org.arise.features.commands.AbstractSlashCommand;
 import org.arise.features.commands.CommandContext;
 
+import java.time.Instant;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,6 +73,7 @@ public class WeatherCommand extends AbstractSlashCommand {
         messageEmbed.addField("Wind direction",weatherData.getWindDirection(),true);
         messageEmbed.setFooter("Weather Powered by weatherapi.com");
         messageEmbed.setThumbnail(weatherData.getIconUrl());
+        messageEmbed.setTimestamp(Instant.now());
 
         MessageCreateData messageData = MessageCreateData.fromEmbeds(messageEmbed.build());
         hook.sendMessage(messageData).queue();
