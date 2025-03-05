@@ -11,10 +11,15 @@ import java.util.Objects;
 public class Configuration {
 
     private final String token;
+    private final String weatherApiKey;
 
     @JsonCreator
-    public Configuration(@JsonProperty(value = "token",required = true) String token){
+    public Configuration(
+            @JsonProperty(value = "token",required = true) String token,
+            @JsonProperty(value = "weatherApiKey",required = true) String weatherApiKey
+    ){
         this.token = Objects.requireNonNull(token);
+        this.weatherApiKey = Objects.requireNonNull(weatherApiKey);
     }
 
     public static Configuration loadFromPath(Path path) throws IOException {
@@ -23,5 +28,9 @@ public class Configuration {
 
     public String getToken(){
         return token;
+    }
+
+    public String getWeatherApiKey() {
+        return weatherApiKey;
     }
 }

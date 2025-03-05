@@ -32,7 +32,7 @@ public class AriseBot implements CommandProvider {
 
     public AriseBot(Configuration config){
         this.config = Objects.requireNonNull(config);
-        this.features = Features.load();
+        this.features = Features.load(config);
     }
 
     public void run(){
